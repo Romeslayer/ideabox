@@ -1,10 +1,13 @@
 html {
+  height: 100%;
   font-family: "Open Sans";
-  display: flex;
+  /* display: flex;
   justify-content: flex-start;
-  flex-wrap: wrap;
-  margin: auto;
-  overflow:hidden
+  flex-wrap: wrap; */
+}
+
+body {
+  margin: 0px;
 }
 
 img {
@@ -20,16 +23,26 @@ img {
   background-color: #1F1F3D;
   color: white;
   height: 100vh;
-  width: 25vw;
+  width: 25%;
+  float: left;
+
 }
 
 .form-section {
   background-color: #A9AAD2;
   height: 40vh;
-  width: 75vw;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+
 
 }
 
 .idea-section {
   background-color: #EAEAF4;
+  height: 60vh;
+  width: 75%;
+  display: flex;
 }
