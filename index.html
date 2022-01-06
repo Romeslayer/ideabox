@@ -8,7 +8,7 @@
     <title>IdeaBox</title>
   </head>
   <body>
-    <aside class="filter-section">
+    <aside class="filter-section dark-purple">
       <h1>IdeaBox</h1>
       <hr>
       <h3>Filter Starred Ideas</h3>
@@ -19,12 +19,13 @@
       <form class="form-section">
         <label for="title" class="form-text">Title</label>
           <input class="title-input" name="text-option" type="text" id="title">
-          <label for="input" class="form-text">Body</label>
+          <label for="body" class="form-text">Body</label>
           <input class="body-input" name="text-option" type="text" id="body">
-        <button class="save-button">Save</button>
+        <button class="save-button dark-purple">Save</button>
         <div class="search-container">
-          <img class="search-image" src="./assets/search.svg" alt="search button"/>
-          <input class="search-input" type="search" placeholder="Search ideas">
+          <img class="search-image dark-purple" src="./assets/search.svg" alt="search button"/>
+          <label for="search" class="hidden">Search bar</label>
+          <input class="search-input" type="search" placeholder="Search ideas" id="search">
         </div>
       </form>
     </section>
