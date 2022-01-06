@@ -9,7 +9,7 @@ var ideaArray = [];
 formSection.addEventListener('mouseover', checkForm);
 
 formSection.addEventListener('click', function(event) {
-  if(event.target.className === 'save-button') {
+  if(event.target.className.includes('save-button')) {
     event.preventDefault();
     saveIdea(titleInput.value, bodyInput.value);
   }
