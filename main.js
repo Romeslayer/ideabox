@@ -38,7 +38,7 @@ function saveIdea(title, body) {
 function displayIdeas() {
   ideaSection.innerHTML = '';
   ideaArray.forEach(function(element) {
-    ideaSection.innerHTML += `<div class="card">
+    ideaSection.innerHTML += `<div class="card" id=${element.id}>
             <div class="card-top">
               <img src="./assets/star.svg" alt="star"/>
               <img src="./assets/delete.svg" alt="delete"/>
