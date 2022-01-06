@@ -39,7 +39,7 @@ function displayIdeas() {
   ideaSection.innerHTML = '';
   ideaArray.forEach(function(element) {
     ideaSection.innerHTML += `<div class="card" id=${element.id}>
-            <div class="card-top">
+            <div class="card-top dark-purple">
               <img src="./assets/star.svg" alt="star"/>
               <img src="./assets/delete.svg" alt="delete"/>
             </div>
