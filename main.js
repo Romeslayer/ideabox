@@ -32,15 +32,14 @@ function saveIdea(title, body) {
   titleInput.value = '';
   bodyInput.value = '';
   ideaArray.push(idea);
-  console.log(ideaArray);
   displayIdeas();
 }
 
 function displayIdeas() {
   ideaSection.innerHTML = '';
   ideaArray.forEach(function(element) {
-    ideaSection.innerHTML += `<div class="card">
-            <div class="card-top">
+    ideaSection.innerHTML += `<div class="card" id=${element.id}>
+            <div class="card-top dark-purple">
               <img src="./assets/star.svg" alt="star"/>
               <img src="./assets/delete.svg" alt="delete"/>
             </div>

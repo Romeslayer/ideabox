@@ -8,103 +8,30 @@
     <title>IdeaBox</title>
   </head>
   <body>
-    <section class="filter-section">
+    <aside class="filter-section dark-purple">
       <h1>IdeaBox</h1>
       <hr>
       <h3>Filter Starred Ideas</h3>
-      <button class="show-starred-ideas">Show Starred Ideas</button>
+      <button class="show-starred-ideas light-purple">Show Starred Ideas</button>
       <hr>
-    </section>
+    </aside>
     <section>
       <form class="form-section">
         <label for="title" class="form-text">Title</label>
           <input class="title-input" name="text-option" type="text" id="title">
-          <label for="input" class="form-text">Body</label>
+          <label for="body" class="form-text">Body</label>
           <input class="body-input" name="text-option" type="text" id="body">
-        <button class="save-button">Save</button>
+        <button class="save-button dark-purple">Save</button>
         <div class="search-container">
-          <img class="search-image" src="./assets/search.svg" alt="search button"/>
-          <input class="search-input" type="search" placeholder="Search ideas">
+          <img class="search-image dark-purple" src="./assets/search.svg" alt="search button"/>
+          <label for="search" class="hidden">Search bar</label>
+          <input class="search-input" type="search" placeholder="Search ideas" id="search">
         </div>
       </form>
     </section>
 
     <section class="idea-section-grid">
-      <div class="card">
-        <div class="card-top">
-          <img src="./assets/star.svg" alt="star"/>
-          <img src="./assets/delete.svg" alt="delete"/>
-        </div>
-        <div class="card-body">
-          <h4>Idea title</h4>
-          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
-        </div>
-        <div class='card-comment'>
-          <img src="./assets/comment.svg" alt="comment"/>
-          <p>Comment</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <img src="./assets/star.svg" alt="star"/>
-          <img src="./assets/delete.svg" alt="delete"/>
-        </div>
-        <div class="card-body">
-          <h4>Idea title</h4>
-          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
-        </div>
-        <div class='card-comment'>
-          <img src="./assets/comment.svg" alt="comment"/>
-          <p>Comment</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <img src="./assets/star.svg" alt="star"/>
-          <img src="./assets/delete.svg" alt="delete"/>
-        </div>
-        <div class="card-body">
-          <h4>Idea title</h4>
-          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
-        </div>
-        <div class='card-comment'>
-          <img src="./assets/comment.svg" alt="comment"/>
-          <p>Comment</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <img src="./assets/star.svg" alt="star"/>
-          <img src="./assets/delete.svg" alt="delete"/>
-        </div>
-        <div class="card-body">
-          <h4>Idea title</h4>
-          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
-        </div>
-        <div class='card-comment'>
-          <img src="./assets/comment.svg" alt="comment"/>
-          <p>Comment</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top">
-          <img src="./assets/star.svg" alt="star"/>
-          <img src="./assets/delete.svg" alt="delete"/>
-        </div>
-        <div class="card-body">
-          <h4>Idea title</h4>
-          <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
-        </div>
-        <div class='card-comment'>
-          <img src="./assets/comment.svg" alt="comment"/>
-          <p>Comment</p>
-        </div>
-      </div>
-
+      <!-- Idea cards go here -->
     </section>
     <script type="text/javascript" src="Idea.js"></script>
     <script type="text/javascript" src="main.js"></script>
