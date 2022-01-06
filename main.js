@@ -32,7 +32,6 @@ function saveIdea(title, body) {
   titleInput.value = '';
   bodyInput.value = '';
   ideaArray.push(idea);
-  console.log(ideaArray);
   displayIdeas();
 }
 
