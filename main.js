@@ -23,6 +23,7 @@ function checkForm() {
     saveButton.disabled = true;
   } else {
     saveButton.disabled = false;
+    saveButton.style.cursor = 'pointer';
     saveButton.style.backgroundColor = '#1F1F3D'
   }
 }
