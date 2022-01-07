@@ -18,20 +18,15 @@ formSection.addEventListener('click', function(event) {
 
 ideaSection.addEventListener('click', function(event) {
   var id = event.target.parentNode.parentNode.id;
+  if(event.target.className.includes('star-button')) {
+    starIdea(id);
+    event.target.classList.toggle('star');
+    console.log(event.target.classList);
+  }
   if(event.target.className.includes('delete-button')) {
-
     deleteIdea(id);
   }
-})
-
-function deleteIdea(id) {
-  for (var i = 0; i < ideaArray.length; i++) {
-    if(ideaArray[i].id.toString() === id) {
-      ideaArray.splice(i, 1);
-    }
-  }
-  displayIdeas();
-}
+});
 
 
 function checkForm() {
@@ -59,7 +54,7 @@ function displayIdeas() {
   ideaArray.forEach(function(element) {
     ideaSection.innerHTML += `<div class="card" id="${element.id}">
             <div class="card-top dark-purple">
-              <img src="./assets/star.svg" alt="star"/>
+              <img class="star-button" src="./assets/star.svg" alt="star"/>
               <img class="delete-button" src="./assets/delete.svg" alt="delete"/>
             </div>
             <div class="card-body">
@@ -72,4 +67,23 @@ function displayIdeas() {
             </div>
           </div>`
   })
+}
+
+function starIdea(id) {
+  for (var i = 0; i < ideaArray.length; i++) {
+    if(ideaArray[i].id.toString() === id) {
+      ideaArray[i].updateIdea();
+
+    }
+  }
+  displayIdeas();
+}
+
+function deleteIdea(id) {
+  for (var i = 0; i < ideaArray.length; i++) {
+    if(ideaArray[i].id.toString() === id) {
+      ideaArray.splice(i, 1);
+    }
+  }
+  displayIdeas();
 }
