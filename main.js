@@ -4,6 +4,7 @@ var bodyInput = document.querySelector('#body');
 var formSection = document.querySelector('.form-section');
 var saveButton = document.querySelector('.save-button');
 var ideaSection = document.querySelector('.idea-section-grid');
+var filterSection = document.querySelector('.filter-section');
 var ideaArray = [];
 
 formSection.addEventListener('mouseover', checkForm);
@@ -26,6 +27,12 @@ ideaSection.addEventListener('click', function(event) {
   }
 });
 
+filterSection.addEventListener('click', function(event) {
+  if(event.target.className.includes('show-starred-ideas')) {
+    showStarredIdeas();
+  }
+})
+
 
 function checkForm() {
   if(!titleInput.value || !bodyInput.value) {
@@ -44,12 +51,12 @@ function saveIdea(title, body) {
   titleInput.value = '';
   bodyInput.value = '';
   ideaArray.push(idea);
-  displayIdeas();
+  displayIdeas(ideaArray);
 }
 
-function displayIdeas() {
+function displayIdeas(array) {
   ideaSection.innerHTML = '';
-  ideaArray.forEach(function(element) {
+  array.forEach(function(element) {
     ideaSection.innerHTML += `
       <div class="card" id="${element.id}">
         <div class="card-top dark-purple">
@@ -75,7 +82,7 @@ function starIdea(id) {
 
     }
   }
-  displayIdeas();
+  displayIdeas(ideaArray);
 }
 
 function deleteIdea(id) {
@@ -84,5 +91,15 @@ function deleteIdea(id) {
       ideaArray.splice(i, 1);
     }
   }
-  displayIdeas();
+  displayIdeas(ideaArray);
+}
+
+function showStarredIdeas() {
+  var starredIdeas = [];
+  for (var i = 0; i < ideaArray.length; i++) {
+    if(ideaArray[i].star) {
+      starredIdeas.push(ideaArray[i])
+    }
+    displayIdeas(starredIdeas);
+  }
 }
