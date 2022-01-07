@@ -20,8 +20,6 @@ ideaSection.addEventListener('click', function(event) {
   var id = event.target.parentNode.parentNode.id;
   if(event.target.className.includes('star-button')) {
     starIdea(id);
-    event.target.classList.toggle('star');
-    console.log(event.target.classList);
   }
   if(event.target.className.includes('delete-button')) {
     deleteIdea(id);
@@ -52,20 +50,21 @@ function saveIdea(title, body) {
 function displayIdeas() {
   ideaSection.innerHTML = '';
   ideaArray.forEach(function(element) {
-    ideaSection.innerHTML += `<div class="card" id="${element.id}">
-            <div class="card-top dark-purple">
-              <img class="star-button" src="./assets/star.svg" alt="star"/>
-              <img class="delete-button" src="./assets/delete.svg" alt="delete"/>
-            </div>
-            <div class="card-body">
-              <h4>${element.title}</h4>
-              <p>${element.body}</p>
-            </div>
-            <div class='card-comment'>
-              <img src="./assets/comment.svg" alt="comment"/>
-              <p>Comment</p>
-            </div>
-          </div>`
+    ideaSection.innerHTML += `
+      <div class="card" id="${element.id}">
+        <div class="card-top dark-purple">
+          <img class="star-button" src=${element.star ? "./assets/star-active.svg" : "./assets/star.svg"} alt="star"/>
+          <img class="delete-button" src="./assets/delete.svg" alt="delete"/>
+        </div>
+        <div class="card-body">
+          <h4>${element.title}</h4>
+          <p>${element.body}</p>
+        </div>
+        <div class='card-comment'>
+          <img src="./assets/comment.svg" alt="comment"/>
+          <p>Comment</p>
+        </div>
+      </div>`
   })
 }
 
