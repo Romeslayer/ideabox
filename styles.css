@@ -75,6 +75,11 @@ hr {
   font-weight: bold;
 }
 
+.form-section input,
+.form-section button {
+  border-radius: 3px;
+}
+
 .form-text {
   font-size: 12px;
   margin-top: 15px;
@@ -148,7 +153,7 @@ hr {
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(3, 1fr);
   grid-gap: 10px;
-  padding: 10px;
+  padding: 10px 20px 10px 10px;
 }
 
 .card,
