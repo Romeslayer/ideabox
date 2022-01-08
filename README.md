@@ -46,7 +46,7 @@ function searchIdeas(element) {
 ### Installation
 
 1. To edit this repository:
-  * navigate to repo on `github.com` or use [this link](INSERT LINK)
+  * navigate to repo on `github.com` or use [this link](https://github.com/Romeslayer/ideabox)
   * choose `fork`
   * `clone` to local machine
 2. `cd` into repository
@@ -55,8 +55,8 @@ function searchIdeas(element) {
 
 ### Credits
 
-This project was provided by Turing School of Software and Design, a Colorado Non-Profit Organization.
+Authors of the IdeaBox: [Igor Decess](https://github.com/userigorgithub), [DéNaje Ferguson](https://github.com/Romeslayer/), [Oakley Windiate](https://github.com/oakleywindiate)
 
-For repo [click here](INSERT LINK)
+Deployed site: [click here](https://romeslayer.github.io/ideabox/)
 
 Interested in learning more about Turing? [click here](https://turing.edu/)
