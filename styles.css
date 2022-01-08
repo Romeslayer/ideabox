@@ -146,7 +146,7 @@ hr {
   width: 72%;
   float: left;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
   grid-gap: 10px;
   padding: 10px;
 }
