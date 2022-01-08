@@ -29,7 +29,13 @@ ideaSection.addEventListener('click', function(event) {
 
 filterSection.addEventListener('click', function(event) {
   if(event.target.className.includes('show-starred-ideas')) {
-    showStarredIdeas();
+    if(event.target.innerText === 'Show Starred Ideas') {
+      showStarredIdeas();
+      event.target.innerText = 'Show All Ideas';
+    } else {
+      event.target.innerText = 'Show Starred Ideas';
+      displayIdeas(ideaArray);
+    }
   }
 })
 
