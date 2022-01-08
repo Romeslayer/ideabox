@@ -8,54 +8,48 @@ var filterSection = document.querySelector('.filter-section');
 var ideaArray = [];
 
 formSection.addEventListener('input', function(event) {
-  if(event.target.className.includes('search-input')) {
+  if (event.target.className.includes('search-input')) {
     searchIdeas(event.target.value);
   } else {
     checkForm();
   }
-})
+});
 
 formSection.addEventListener('click', function(event) {
-  if(event.target.className.includes('save-button')) {
+  if (event.target.className.includes('save-button')) {
     event.preventDefault();
     saveIdea(titleInput.value, bodyInput.value);
     checkForm();
   }
-})
+});
 
 ideaSection.addEventListener('click', function(event) {
   var id = event.target.parentNode.parentNode.id;
-  if(event.target.className.includes('star-button')) {
+  if (event.target.className.includes('star-button')) {
     starIdea(id);
   }
-  if(event.target.className.includes('delete-button')) {
+  if (event.target.className.includes('delete-button')) {
     deleteIdea(id);
   }
-})
+});
 
 filterSection.addEventListener('click', function(event) {
-  if(event.target.className.includes('show-starred-ideas')) {
-    if(event.target.innerText === 'Show Starred Ideas') {
-      showStarredIdeas();
-      event.target.innerText = 'Show All Ideas';
-    } else {
-      event.target.innerText = 'Show Starred Ideas';
-      displayIdeas(ideaArray);
-    }
+  if (event.target.className.includes('show-starred-ideas')) {
+    checkSaveButton(event.target);
   }
-})
+});
 
 function checkForm() {
-  if(!titleInput.value || !bodyInput.value) {
+  if (!titleInput.value || !bodyInput.value) {
     saveButton.style.backgroundColor = '#A9AAD2';
     saveButton.style.cursor = 'not-allowed';
     saveButton.disabled = true;
   } else {
     saveButton.disabled = false;
     saveButton.style.cursor = 'pointer';
-    saveButton.style.backgroundColor = '#1F1F3D'
+    saveButton.style.backgroundColor = '#1F1F3D';
   }
-}
+};
 
 function saveIdea(title, body) {
   var idea = new Idea(title, body);
@@ -63,64 +57,77 @@ function saveIdea(title, body) {
   bodyInput.value = '';
   ideaArray.push(idea);
   displayIdeas(ideaArray);
-}
+};
 
 function displayIdeas(array) {
   ideaSection.innerHTML = '';
-  array.forEach(function(element) {
+  for (var i = 0; i < array.length; i++) {
     ideaSection.innerHTML += `
-      <div class="card" id="${element.id}">
-        <div class="card-top dark-purple">
-          <img class="star-button" src=${element.star ? "./assets/star-active.svg" : "./assets/star.svg"} alt="star"/>
-          <img class="delete-button" src="./assets/delete.svg" alt="delete"/>
+      <div class='card' id='${array[i].id}'>
+        <div class='card-top dark-purple'>
+          <img class='star-button' src=${array[i].star ? './assets/star-active.svg' : './assets/star.svg'} alt='star'/>
+          <img class='delete-button' src='./assets/delete.svg' alt='delete'/>
         </div>
-        <div class="card-body">
-          <h4>${element.title}</h4>
-          <p>${element.body}</p>
+        <div class='card-body'>
+          <h4>${array[i].title}</h4>
+          <p>${array[i].body}</p>
         </div>
         <div class='card-comment'>
-          <img src="./assets/comment.svg" alt="comment"/>
+          <img src='./assets/comment.svg' alt='comment'/>
           <p>Comment</p>
         </div>
       </div>`
-  })
-}
+  }
+};
 
 function starIdea(id) {
   for (var i = 0; i < ideaArray.length; i++) {
-    if(ideaArray[i].id.toString() === id) {
+    if (ideaArray[i].id.toString() === id) {
       ideaArray[i].updateIdea();
-
     }
   }
+
   displayIdeas(ideaArray);
-}
+};
 
 function deleteIdea(id) {
   for (var i = 0; i < ideaArray.length; i++) {
-    if(ideaArray[i].id.toString() === id) {
+    if (ideaArray[i].id.toString() === id) {
       ideaArray.splice(i, 1);
     }
   }
+
   displayIdeas(ideaArray);
-}
+};
+
+function checkSaveButton(target) {
+  if (target.innerText === 'Show Starred Ideas') {
+    showStarredIdeas();
+    target.innerText = 'Show All Ideas';
+  } else {
+    target.innerText = 'Show Starred Ideas';
+    displayIdeas(ideaArray);
+  }
+};
 
 function showStarredIdeas() {
   var starredIdeas = [];
   for (var i = 0; i < ideaArray.length; i++) {
-    if(ideaArray[i].star) {
+    if (ideaArray[i].star) {
       starredIdeas.push(ideaArray[i]);
     }
-    displayIdeas(starredIdeas);
   }
-}
+
+  displayIdeas(starredIdeas);
+};
 
 function searchIdeas(element) {
   var filteredIdeas = [];
   for (var i = 0; i < ideaArray.length; i++) {
-    if(ideaArray[i].title.includes(element) || ideaArray[i].body.includes(element)) {
+    if (ideaArray[i].title.includes(element) || ideaArray[i].body.includes(element)) {
       filteredIdeas.push(ideaArray[i]);
     }
-    displayIdeas(filteredIdeas);
   }
-}
+
+  displayIdeas(filteredIdeas);
+};
