@@ -5,7 +5,7 @@
 “An idea that is developed and put into action is more important than an idea that exists only as an idea.”
  ― Edward De Bono
 
-Capturing all your ideas in one place is easy with IdeaBox. Want to create a new idea? Simply fill in your title and body, and then select `save` to start your collection. Have ideas that you *really* like? Make sure to select the `star` at the top of the idea to add it to your personalized collection. Looking for an idea, but can't find it? Don't worry! We made finding ideas quick and efficient. Just enter your key words into the `Search Ideas` bar to start filtering through all of your ideas.
+Capturing all your ideas in one place is easy with IdeaBox. Want to create a new idea? Simply fill in your title and body, and then select `save` to start your new collection. Have ideas that you *really* like? Make sure to select the `star` at the top of your idea to add it to your very own personalized collection. Looking for an idea, but can't find it? Don't worry! We made finding ideas quick and efficient. Just enter your key words into the `Search Ideas` bar to start filtering through all of your ideas.
 
 *INSERT FUNCTIONALITY INFO HERE*
 
