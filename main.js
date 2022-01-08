@@ -7,7 +7,13 @@ var ideaSection = document.querySelector('.idea-section-grid');
 var filterSection = document.querySelector('.filter-section');
 var ideaArray = [];
 
-formSection.addEventListener('mouseover', checkForm);
+formSection.addEventListener('input', function(event) {
+  if(event.target.className.includes('search-input')) {
+    searchIdeas(event.target.value);
+  } else {
+    checkForm();
+  }
+})
 
 formSection.addEventListener('click', function(event) {
   if(event.target.className.includes('save-button')) {
@@ -25,7 +31,7 @@ ideaSection.addEventListener('click', function(event) {
   if(event.target.className.includes('delete-button')) {
     deleteIdea(id);
   }
-});
+})
 
 filterSection.addEventListener('click', function(event) {
   if(event.target.className.includes('show-starred-ideas')) {
@@ -38,7 +44,6 @@ filterSection.addEventListener('click', function(event) {
     }
   }
 })
-
 
 function checkForm() {
   if(!titleInput.value || !bodyInput.value) {
@@ -104,8 +109,18 @@ function showStarredIdeas() {
   var starredIdeas = [];
   for (var i = 0; i < ideaArray.length; i++) {
     if(ideaArray[i].star) {
-      starredIdeas.push(ideaArray[i])
+      starredIdeas.push(ideaArray[i]);
     }
     displayIdeas(starredIdeas);
+  }
+}
+
+function searchIdeas(element) {
+  var filteredIdeas = [];
+  for (var i = 0; i < ideaArray.length; i++) {
+    if(ideaArray[i].title.includes(element) || ideaArray[i].body.includes(element)) {
+      filteredIdeas.push(ideaArray[i]);
+    }
+    displayIdeas(filteredIdeas);
   }
 }

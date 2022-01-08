@@ -34,8 +34,6 @@ hr {
   border-color: #353567;
 }
 
-
-
 .hidden {
   display: none!important;
 }
@@ -113,7 +111,6 @@ hr {
   color: #E9E9F3;
   margin-left: 200px;
   border-color: #5356A4;
-
 }
 
 .search-image,
@@ -152,7 +149,6 @@ hr {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   padding: 10px;
-  overflow: scroll;
 }
 
 .card,
@@ -169,7 +165,6 @@ hr {
   border-style: solid;
   border-width: 1px;
   border-color: #1F1F3D;
-
 }
 
 .card-top {
