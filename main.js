@@ -1,10 +1,9 @@
-//querySelectors
 var titleInput = document.querySelector('#title');
 var bodyInput = document.querySelector('#body');
-var formSection = document.querySelector('.form-section');
-var saveButton = document.querySelector('.save-button');
-var ideaSection = document.querySelector('.idea-section-grid');
-var filterSection = document.querySelector('.filter-section');
+var formSection = document.querySelector('.js-form-section');
+var saveButton = document.querySelector('.js-save-button');
+var ideaSection = document.querySelector('.js-idea-section-grid');
+var filterSection = document.querySelector('.js-filter-section');
 var ideaArray = [];
 
 formSection.addEventListener('input', function(event) {
@@ -20,7 +19,7 @@ window.addEventListener('load', function(event) {
 });
 
 formSection.addEventListener('click', function(event) {
-  if (event.target.className.includes('save-button')) {
+  if (event.target.className.includes('js-save-button')) {
     event.preventDefault();
     saveIdea(titleInput.value, bodyInput.value);
     checkForm();
