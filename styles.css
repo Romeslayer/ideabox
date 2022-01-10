@@ -159,13 +159,14 @@ hr {
 
 .idea-section-grid {
   background-color: #EAEAF4;
-  height: 57vh;
-  width: 72%;
+  height: 60vh;
+  width: 75%;
   float: left;
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(3, 1fr);
   grid-gap: 10px;
   padding: 10px 20px 10px 10px;
+  box-sizing: border-box;
 }
 
 .card,
@@ -186,6 +187,10 @@ hr {
 
 .card-top {
   justify-content: space-between;
+}
+
+.card-top img {
+  cursor: pointer;
 }
 
 .card-body {
