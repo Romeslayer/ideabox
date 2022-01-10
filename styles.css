@@ -1,3 +1,5 @@
+/* GLOBAL RULES */
+
 html {
   height: 100%;
   width: auto;
@@ -6,6 +8,10 @@ html {
 
 body {
   margin: 0px;
+}
+
+button {
+  cursor: pointer;
 }
 
 img {
@@ -46,6 +52,8 @@ hr {
   background-color: #5353A4;
 }
 
+/* FILTER SECTION RULES */
+
 .filter-section {
   color: #FFFFFF;
   height: 100vh;
@@ -64,6 +72,8 @@ hr {
   margin-bottom: 20px;
 }
 
+/* FORM SECTION RULES */
+
 .form-section {
   background-color: #A9AAD2;
   height: 40vh;
@@ -73,6 +83,11 @@ hr {
   margin: auto;
   color: #1F1F3D;
   font-weight: bold;
+}
+
+.form-section input,
+.form-section button {
+  border-radius: 3px;
 }
 
 .form-text {
@@ -140,15 +155,17 @@ hr {
   margin-left: 200px;
 }
 
+/* IDEAS SECTION GRID RULES */
+
 .idea-section-grid {
   background-color: #EAEAF4;
   height: 57vh;
   width: 72%;
   float: left;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
   grid-gap: 10px;
-  padding: 10px;
+  padding: 10px 20px 10px 10px;
 }
 
 .card,
