@@ -15,6 +15,10 @@ formSection.addEventListener('input', function(event) {
   }
 });
 
+window.addEventListener('load', function(event) {
+  checkForm();
+});
+
 formSection.addEventListener('click', function(event) {
   if (event.target.className.includes('save-button')) {
     event.preventDefault();
